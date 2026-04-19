@@ -7,4 +7,10 @@ cask "input-source-handler" do
   homepage "https://github.com/yuyuyuyuyu-dev/input-source-handler#readme"
 
   app "InputSourceHandler.app"
+
+  postflight do
+    system_command "xattr",
+                   args: ["-cr", "#{appdir}/InputSourceHandler.app"],
+                   sudo: true
+  end
 end
