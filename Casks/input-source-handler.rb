@@ -13,4 +13,11 @@ cask "input-source-handler" do
                    args: ["-cr", "#{appdir}/InputSourceHandler.app"],
                    sudo: true
   end
+
+  caveats <<~EOS
+    This app requires sudo (administrator) privileges to remove the quarantine attribute.
+    This is necessary to prevent macOS Gatekeeper from showing the "app is damaged" error,
+    since the app is currently not signed or notarized by Apple.
+    You will be prompted for your password during the installation process.
+  EOS
 end
