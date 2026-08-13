@@ -1,6 +1,6 @@
 cask "input-source-handler" do
-  version "0.1.0"
-  sha256 "91a7cf8b71c14ce652122466a89c87cd52124ae963f0887179c4baaa4bde2d7e"
+  version "0.2.0"
+  sha256 "e87b051c8376cf2b134d5060c7d90a05d41f08d48c53becb42d7a0acff5fa1e4"
 
   url "https://github.com/yuyuyuyuyu-dev/input-source-handler/releases/download/v#{version}/InputSourceHandler.zip"
   name "Input Source Handler"
