@@ -1,4 +1,4 @@
-name: Check casks
+name: CI
 
 on:
   pull_request:
