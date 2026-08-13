@@ -8,6 +8,18 @@ permissions:
   contents: read
 
 jobs:
+  actionlint:
+    name: Actionlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Lint workflows
+        uses: docker://rhysd/actionlint:1.7.12
+        with:
+          args: -color
+
   style:
     name: Style
     runs-on: macos-latest
