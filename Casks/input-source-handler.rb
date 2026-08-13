@@ -4,7 +4,10 @@ cask "input-source-handler" do
 
   url "https://github.com/yuyuyuyuyu-dev/input-source-handler/releases/download/v#{version}/InputSourceHandler.zip"
   name "Input Source Handler"
+  desc "Utility for switching input sources with custom keyboard shortcuts"
   homepage "https://github.com/yuyuyuyuyu-dev/input-source-handler#readme"
+
+  depends_on macos: :tahoe
 
   app "InputSourceHandler.app"
 
