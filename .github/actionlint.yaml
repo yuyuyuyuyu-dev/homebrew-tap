@@ -1,0 +1,7 @@
+paths:
+  .github/workflows/bump-casks.yml:
+    ignore:
+      # actionlint 1.7.12 still carries the pre-v3 input list for this action,
+      # where `app-id` was required and `client-id` did not exist yet.
+      - 'missing input "app-id" which is required by action "actions/create-github-app-token@v3"'
+      - 'input "client-id" is not defined in action "actions/create-github-app-token@v3"'

@@ -8,23 +8,31 @@ permissions:
   contents: read
 
 jobs:
+  actionlint:
+    name: actionlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Lint workflows
+        uses: docker://rhysd/actionlint:1.7.12
+        with:
+          args: -color
+
   style:
     name: Style
     runs-on: macos-latest
-    env:
-      HOMEBREW_DEVELOPER: "1"
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@2026.08.10.2
 
       - name: Check style
-        run: brew style yuyuyuyuyu-dev/tap
+        run: brew style Casks
 
   audit:
     name: Audit
     runs-on: macos-latest
-    env:
-      HOMEBREW_DEVELOPER: "1"
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@2026.08.10.2
