@@ -1,0 +1,46 @@
+name: Check casks
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  style:
+    name: Style
+    runs-on: macos-latest
+    env:
+      HOMEBREW_DEVELOPER: "1"
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@2026.08.10.2
+
+      - name: Check style
+        run: brew style yuyuyuyuyu-dev/tap
+
+  audit:
+    name: Audit
+    runs-on: macos-latest
+    env:
+      HOMEBREW_DEVELOPER: "1"
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@2026.08.10.2
+
+      - name: Audit casks
+        run: brew audit --cask --strict --tap yuyuyuyuyu-dev/tap
+
+  fetch:
+    name: Fetch
+    runs-on: macos-latest
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@2026.08.10.2
+
+      - name: Verify checksums against the published artifacts
+        run: |
+          for cask in Casks/*.rb; do
+            brew fetch --cask "yuyuyuyuyu-dev/tap/$(basename "$cask" .rb)"
+          done
