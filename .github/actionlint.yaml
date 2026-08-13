@@ -1,6 +1,3 @@
-config-variables:
-  - APP_CLIENT_ID
-
 paths:
   .github/workflows/bump-casks.yml:
     ignore:

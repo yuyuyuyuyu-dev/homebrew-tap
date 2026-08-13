@@ -23,8 +23,6 @@ jobs:
   style:
     name: Style
     runs-on: macos-latest
-    env:
-      HOMEBREW_DEVELOPER: "1"
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@2026.08.10.2
@@ -35,8 +33,6 @@ jobs:
   audit:
     name: Audit
     runs-on: macos-latest
-    env:
-      HOMEBREW_DEVELOPER: "1"
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@2026.08.10.2
