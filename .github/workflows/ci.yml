@@ -18,7 +18,7 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@2026.08.10.2
 
       - name: Check style
-        run: brew style yuyuyuyuyu-dev/tap
+        run: brew style Casks
 
   audit:
     name: Audit
