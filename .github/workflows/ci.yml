@@ -25,7 +25,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@2026.08.24.1
+        uses: Homebrew/actions/setup-homebrew@2026.08.31.1
 
       - name: Check style
         run: brew style Casks
@@ -35,7 +35,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@2026.08.24.1
+        uses: Homebrew/actions/setup-homebrew@2026.08.31.1
 
       - name: Audit casks
         run: brew audit --cask --strict --tap yuyuyuyuyu-dev/tap
@@ -45,7 +45,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@2026.08.24.1
+        uses: Homebrew/actions/setup-homebrew@2026.08.31.1
 
       - name: Verify checksums against the published artifacts
         run: |
