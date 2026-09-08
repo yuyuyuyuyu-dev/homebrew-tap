@@ -11,10 +11,10 @@ cask "input-source-handler" do
 
   app "InputSourceHandler.app"
 
-  postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/InputSourceHandler.app"],
-                   sudo: true
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-cr", "{{appdir}}/InputSourceHandler.app"],
+        sudo: true
   end
 
   caveats <<~EOS
