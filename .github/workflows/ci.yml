@@ -20,6 +20,12 @@ jobs:
         with:
           args: -color
 
+  oxfmt:
+    name: Oxfmt
+    permissions:
+      contents: read
+    uses: yuyuyuyuyu-dev/repo-config/.github/workflows/oxfmt.yml@main
+
   style:
     name: Style
     runs-on: macos-latest
