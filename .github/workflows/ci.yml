@@ -20,11 +20,11 @@ jobs:
         with:
           args: -color
 
-  oxfmt:
-    name: Oxfmt
+  biome:
+    name: Biome
     permissions:
       contents: read
-    uses: yuyuyuyuyu-dev/repo-config/.github/workflows/oxfmt.yml@main
+    uses: yuyuyuyuyu-dev/repo-config/.github/workflows/biome.yml@main
 
   style:
     name: Style
